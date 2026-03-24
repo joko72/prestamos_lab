@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class='card shadow'>
+    <div class='card-body'>
+        <h2 class='card-title mb-4'>
+            <i class="fas fa-chart-pie me-2"></i>Reporte interno
+        </h2>
+        
+        <div class='alert alert-info'>
+            <i class="fas fa-info-circle me-2"></i>
+            Esta vista solo puede ser visualizada por usuarios del grupo
+            <strong>Encargados</strong>
+            que además tengan el permiso correspondiente.
+        </div>
+        
+        <div class='row g-4'>
+            <div class='col-md-4'>
+                <div class='card text-center border-primary h-100'>
+                    <div class='card-body'>
+                        <i class="fas fa-laptop text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h5 class='text-muted'>Total notebooks</h5>
+                        <p class='display-4 fw-bold text-primary'>{{ total }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col-md-4'>
+                <div class='card text-center border-success h-100'>
+                    <div class='card-body'>
+                        <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
+                        <h5 class='text-muted'>Disponibles</h5>
+                        <p class='display-4 fw-bold text-success'>{{ disponibles }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col-md-4'>
+                <div class='card text-center border-warning h-100'>
+                    <div class='card-body'>
+                        <i class="fas fa-tools text-warning mb-3" style="font-size: 3rem;"></i>
+                        <h5 class='text-muted'>En mantención</h5>
+                        <p class='display-4 fw-bold text-warning'>{{ mantencion }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
